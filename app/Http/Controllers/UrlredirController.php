@@ -8,11 +8,9 @@ use App\UrlMapping;
 
 class UrlredirController extends Controller
 {
-
-    public function redirUrl () {
+    public function redirUrl ($id) {
 	
-	
+	return view('urlredir', ['id' => $id]);
 	
 	}
-
 }

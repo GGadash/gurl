@@ -11,9 +11,8 @@ class UrlinfoController extends Controller
 
     public function displayInfo ($id) {
 	
+	return view('displayinfo', ['id' => $id]);
 	
 	
-
-	}
-
+}
 }

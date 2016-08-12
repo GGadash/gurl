@@ -15,8 +15,8 @@ class GurlpostController extends Controller
     $urlmapping->longurl = $request->longurl;
     $urlmapping->save();
 
-    return redirect('/');
-	//return redirect('/urlinfo/'.$urlmapping->id);
+    //return redirect('/');
+	return redirect('/urlinfo/'.$urlmapping->id);
 	}
 
 }
