@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\UrlMapping;
 
-$urlredir = DB::table('url_mappings')->where('id', $id)->first();
+$urlredir = UrlMapping::where('id', $id)->first();
 
 //return Redirect::away($urlredir->longurl);
 
