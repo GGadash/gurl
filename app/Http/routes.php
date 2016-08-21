@@ -4,12 +4,14 @@ use App\UrlMapping;
 use Illuminate\Http\Request;
 
 
-Route::get('/', 'GurlhomeController@showGurl');
-
-Route::post('/urlmapping', 'GurlpostController@addUrl');
-
-Route::delete('/urlmapping/{urlmapping}', 'GurldeleteController@delUrl');
-
-Route::get('/urlinfo/{id}', 'UrlinfoController@displayInfo');
-
 Route::get('/{id}', 'UrlredirController@redirUrl');
+
+
+Route::get('/', 'GurlmapController@showGurl');
+
+Route::post('/urlmapping', 'GurlmapController@addUrl');
+
+Route::delete('/urlmapping/{urlmapping}', 'GurlmapController@delUrl');
+
+Route::get('/urlinfo/{id}', 'GurlmapController@displayInfo');
+

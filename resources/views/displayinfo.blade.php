@@ -1,11 +1,5 @@
 <!-- resources/views/displayinfo.blade.php -->
 
-<?php
-//should this be in the controller? 
-use App\UrlMapping;
-$urlinfo = UrlMapping::where('id', $id)->first();
-?>
-
 @include('common.errors')
 
 <DIV>ID: {{ $urlinfo->id }}</DIV>
