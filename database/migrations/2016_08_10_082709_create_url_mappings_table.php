@@ -14,7 +14,7 @@ class CreateUrlMappingsTable extends Migration
     {
         Schema::create('url_mappings', function (Blueprint $table) {
             $table->increments('id');
-			$table->string('longurl');
+			$table->string('longurl', 9999);
             $table->timestamps();
         });
     }

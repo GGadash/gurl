@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\UrlMapping;
+use Validator;
 
 
 class GurlmapController extends Controller
@@ -22,6 +23,16 @@ class GurlmapController extends Controller
 	// Add URL
 	public function addUrl (Request $request) {
 
+    $validator = Validator::make($request->all(), [
+        'longurl' => 'required|url|max:9999',
+    ]);
+
+    if ($validator->fails()) {
+        return redirect('/')
+            ->withInput()
+            ->withErrors($validator);
+    }
+	
     $urlmapping = new UrlMapping;
     $urlmapping->longurl = $request->longurl;
     $urlmapping->save();
@@ -47,5 +58,5 @@ class GurlmapController extends Controller
 	
 }
 
-
 }
+
